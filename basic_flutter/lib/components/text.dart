@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class TextExample extends StatelessWidget {
@@ -5,7 +7,7 @@ class TextExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Spacer(),
         Text("holus"),
@@ -18,10 +20,13 @@ class TextExample extends StatelessWidget {
         ),
 
         Text(
-          "Texto curvado",
-          style: TextStyle(fontStyle: FontStyle.italic, fontSize: 30),
+          "Texto Colores",
+          style: TextStyle(fontStyle: FontStyle.italic, fontSize: 30, color: Colors.green[300]),
         ),
-        
+        Text("Decorador", style: TextStyle(decoration: TextDecoration.underline, fontSize: 30,
+        color: Colors.blueAccent, decorationColor: Colors.amber),),
+        Text("Espaciado entre letras", style: TextStyle(letterSpacing: 5, fontSize: 20),),
+        Text("Texto Largo, Texto Largo Texto LargoTexto LargoTexto Largo Texto Largo Texto Largo", style: TextStyle( fontSize: 30),maxLines: 2, overflow: TextOverflow.ellipsis,),
         Spacer(),
       ],
     );
