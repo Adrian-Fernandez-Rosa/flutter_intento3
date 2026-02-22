@@ -203,3 +203,123 @@ Ejemplo 1 |   espacio flexible   | Ejemplo 2 |   espacio flexible   | Ejemplo 3 
 
 
 4:02
+
+```dart
+
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
+
+class TextExample extends StatelessWidget {
+  const TextExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Spacer(),
+        Text("holus"),
+        Text("Texto Grande", style: TextStyle(fontSize: 24)),
+        Text("Texto Grande",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+        Text(
+          "Texto curvado",
+          style: TextStyle(fontStyle: FontStyle.italic, fontSize: 30),
+        ),
+
+        Text(
+          "Texto Colores",
+          style: TextStyle(fontStyle: FontStyle.italic, fontSize: 30, color: Colors.green[300]),
+        ),
+        Text("Decorador", style: TextStyle(decoration: TextDecoration.underline, fontSize: 30,
+        color: Colors.blueAccent, decorationColor: Colors.amber),),
+        Text("Espaciado entre letras", style: TextStyle(letterSpacing: 5, fontSize: 20),),
+        Text("Texto Largo, Texto Largo Texto LargoTexto LargoTexto Largo Texto Largo Texto Largo", style: TextStyle( fontSize: 30),maxLines: 2, overflow: TextOverflow.ellipsis,), // elipsis mete los 3 puntos
+        Spacer(),
+      ],
+    );
+  }
+}
+
+```
+
+
+## TextField
+
+```dart
+
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
+import 'package:flutter/material.dart';
+
+class TextFieldExample extends StatelessWidget {
+  const TextFieldExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  ListView(
+      children: [
+        SizedBox(
+          height: 60,
+        ),
+        TextField(),
+        SizedBox(
+          height: 32,
+        ),
+        TextField(),
+        SizedBox(
+          height: 32,
+        ),
+        TextField(
+          decoration: InputDecoration(hintText: "Introduce tu email"),
+        ),
+        SizedBox(
+          height: 32,
+        ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: TextField(
+            decoration: InputDecoration(
+                hintText: "Introduce tu email", border: OutlineInputBorder()),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: TextField(
+            decoration: InputDecoration(
+                hintText: "Introduce tu email",
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder()),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+                hintText: "Introduce tu contraseña",
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder()),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: TextField(
+            maxLines: 1,
+            maxLength: 10,
+            decoration: InputDecoration(
+                hintText: "Introduce tu comentario",
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder()),
+          ),
+        ),
+        SizedBox(
+          height: 32,
+        )
+      ],
+    );
+  }
+}
+
+
+```
