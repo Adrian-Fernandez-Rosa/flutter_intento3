@@ -323,3 +323,90 @@ class TextFieldExample extends StatelessWidget {
 
 
 ```
+
+# 📝 Entradas de Texto (TextField) en Flutter
+
+En esta lección exploraremos el widget `TextField`, el componente principal en Flutter para capturar la entrada de datos del usuario por teclado. A través del código de ejemplo, veremos cómo evoluciona un campo de texto simple añadiendo diseño, seguridad y restricciones.
+
+## 1. El Contenedor Principal: `ListView`
+
+En lugar de utilizar una `Column`, este ejemplo envuelve todos los elementos en un `ListView`. 
+
+**¿Por qué es importante esto?**
+Cuando el usuario toca un `TextField`, el teclado del dispositivo se despliega desde la parte inferior ocupando la mitad de la pantalla. Si usáramos una `Column`, los elementos quedarían aplastados o generarían un error visual llamado *Bottom Overflow*. El `ListView` permite hacer *scroll* automáticamente para que el usuario pueda seguir navegando por los campos de texto cómodamente.
+
+## 2. Separación y Espaciado (`SizedBox` y `Padding`)
+
+Para que la interfaz respire y los campos no estén pegados, utilizamos dos estrategias:
+* **`SizedBox(height: ...)`:** Crea un "caja vacía" que empuja los elementos hacia abajo, generando un salto de línea con una altura específica.
+* **`Padding`:** Envuelve al `TextField` para añadir márgenes internos en todos sus lados (`EdgeInsets.all(8.0)`), separándolo de los bordes de la pantalla.
+
+---
+
+## 3. Anatomía y Evolución del `TextField`
+
+
+
+A lo largo del código, el `TextField` va adquiriendo nuevas propiedades o "superpoderes":
+
+
+
+
+decoration: InputDecoration(hintText: "Introduce tu email"),
+
+Reto para los alumnos:
+¿Cómo harían para capturar en una variable lo que el usuario ha escrito dentro de uno de estos TextField? (Pista: Investiguen sobre TextEditingController
+
+
+## Botones
+
+# 🖱️ Catálogo de Botones y Estados en Flutter
+
+En esta sección exploraremos los principales tipos de botones que ofrece Material Design en Flutter. Además, aprenderemos a deshabilitarlos, a detectar pulsaciones largas y a darles un estilo personalizado.
+
+
+
+## 1. Distribución del Espacio: El widget `Spacer`
+Antes de ver los botones, nota que la `Column` empieza y termina con un `Spacer()`. 
+* **¿Qué hace?** Actúa como un resorte invisible. Toma todo el espacio vertical sobrante de la pantalla y lo empuja. 
+* Al poner uno arriba y uno abajo, "aplastan" a los botones hacia el centro exacto de la pantalla. Es una alternativa excelente a `mainAxisAlignment.center`.
+
+---
+
+## 2. Tipos de Botones
+
+### A. ElevatedButton (Alta Jerarquía)
+El botón principal de la pantalla. En el código, le hemos añadido "superpoderes":
+* **`onLongPress`**: Además del clic normal (`onPressed`), podemos detectar si el usuario mantiene el dedo presionado sobre el botón.
+* **Estilo Personalizado (`style`)**: Usamos `ButtonStyle` para cambiar el color de fondo a rojo. 
+  > 🧠 **Nota avanzada:** Verás que usamos `WidgetStateProperty.all(Colors.red)`. Esto se debe a que un botón puede tener diferentes colores dependiendo de su estado (si está presionado, si está deshabilitado, etc.). Al usar `.all()`, le decimos: *"Quiero que seas rojo en absolutamente todos tus estados"*.
+
+### B. OutlinedButton (Jerarquía Media)
+El botón secundario, ideal para acciones como "Cancelar". Tiene un borde definido pero un fondo transparente.
+
+### C. TextButton (Baja Jerarquía)
+Es el botón más sutil de todos. No tiene fondo ni borde, solo el texto que reacciona al tacto.
+* **Uso común:** Acciones que no deben distraer, como "Olvidé mi contraseña" o "Saber más".
+
+---
+
+## 3. Botones con Iconos
+
+
+
+### D. FloatingActionButton (FAB)
+Es el icónico botón circular que suele "flotar" en la esquina inferior derecha de las aplicaciones. 
+* En la app de ProgredGroup, este sería el botón ideal para la acción principal de una pantalla, como "Agregar un nuevo registro" o "Crear mensaje". Suelen llevar un `Icon` en lugar de texto.
+
+### E. IconButton
+Un botón minimalista que solo muestra un icono. Perfecto para barras de navegación (AppBars) o acciones dentro de tarjetas (como darle "Me gusta" a un post con el `Icons.favorite`).
+
+---
+
+## 🚫 4. El Estado Deshabilitado (`onPressed: null`)
+
+¿Te fijaste que algunos botones tienen `onPressed: null` en lugar de `onPressed: () {}`?
+
+Esta es la forma oficial en Flutter de **apagar o deshabilitar** un botón. 
+* Si le pasas `null`, Flutter automáticamente cambia el color del botón a un tono grisáceo y desactiva el efecto visual (splash) y de sonido al tocarlo. 
+* **¿Cuándo usarlo?** Por ejemplo, cuando el usuario no ha terminado de llenar un formulario y no quieres que envíe los datos todavía.
