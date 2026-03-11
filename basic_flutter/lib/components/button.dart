@@ -21,7 +21,7 @@ class ButtonExample extends StatelessWidget {
         style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.red)),
         ),
         OutlinedButton(onPressed: null, child: Text("Outlined")),
-        TextButton(onPressed: null, child: Text("aa")),
+        TextButton(onPressed: (){}, child: Text("aa")),
         FloatingActionButton(onPressed: () {}, child: Icon(Icons.add),),
         IconButton(onPressed: null, icon: Icon(Icons.favorite)),
         Spacer(),

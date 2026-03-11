@@ -202,7 +202,7 @@ Row(
 Ejemplo 1 |   espacio flexible   | Ejemplo 2 |   espacio flexible   | Ejemplo 3 Ejemplo 4
 
 
-4:02
+
 
 ```dart
 
@@ -410,3 +410,15 @@ Un botón minimalista que solo muestra un icono. Perfecto para barras de navegac
 Esta es la forma oficial en Flutter de **apagar o deshabilitar** un botón. 
 * Si le pasas `null`, Flutter automáticamente cambia el color del botón a un tono grisáceo y desactiva el efecto visual (splash) y de sonido al tocarlo. 
 * **¿Cuándo usarlo?** Por ejemplo, cuando el usuario no ha terminado de llenar un formulario y no quieres que envíe los datos todavía.
+
+
+# Imagenes
+
+en nuestro pubspec yaml se debe meter la ruta de nuestros recursos a utilizar en el proyecto que pueden ser imagenes, sonidos, etc
+
+```yaml
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+```

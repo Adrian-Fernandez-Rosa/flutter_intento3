@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:basic_flutter/components/button.dart';
+import 'package:basic_flutter/components/image.dart';
 import 'package:basic_flutter/components/text.dart';
 import 'package:basic_flutter/layouts/column.dart';
 import 'package:basic_flutter/layouts/row.dart';
@@ -19,7 +20,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ButtonExample(),
+        body: ImageExample(),
       ),
     );
   }
