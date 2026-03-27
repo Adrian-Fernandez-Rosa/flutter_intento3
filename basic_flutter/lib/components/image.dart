@@ -13,7 +13,8 @@ class ImageExample extends StatelessWidget {
       children: [
         Center(
         child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6OrVvcJ9NA-WQuRWXSn5f9qItjFx6nanvvQ&s")
-        )
+        ),
+        Image.asset("assets/images/dash.png",  height: 350,)
       ],
     );
   }
