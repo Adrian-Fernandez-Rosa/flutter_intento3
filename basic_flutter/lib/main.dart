@@ -17,10 +17,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ImageExample(),
+        appBar: AppBar(
+          title: Text("My super App"),
+          foregroundColor: Colors.white, // Colores a texto y iconos
+          backgroundColor: Colors.black,
+        ),
+        backgroundColor: Colors.amberAccent,
+        body: const ImageExample(),
+        floatingActionButton: FloatingActionButton(onPressed: (){}),
       ),
     );
   }
