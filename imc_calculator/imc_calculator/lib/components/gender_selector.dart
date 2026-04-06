@@ -20,6 +20,7 @@ class _GenderSelectorState extends State<GenderSelector> {
         Column(
           children: [
             Image.asset("assets/images/male.png", height: 100,),
+            SizedBox(height: 8,), // Tambien se podia haber usado un padding top
             Text("Hombre".toUpperCase(), 
             style: TextStyles.bodyText)
           ],
@@ -30,6 +31,7 @@ class _GenderSelectorState extends State<GenderSelector> {
           children: [
 
              Image.asset("assets/images/female.png", height: 100,),
+            SizedBox(height: 8,),
             Text("Mujer".toUpperCase(), 
             style: TextStyles.bodyText) //nota que repetimos el mismo Texstyle de mas arriba
 
