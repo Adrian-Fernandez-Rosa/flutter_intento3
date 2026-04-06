@@ -422,3 +422,47 @@ flutter:
   assets:
     - assets/images/
 ```
+f
+
+```dart
+import 'package:flutter/material.dart';
+
+class ImageExample extends StatelessWidget {
+  const ImageExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Center(
+        child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6OrVvcJ9NA-WQuRWXSn5f9qItjFx6nanvvQ&s")
+        ),
+        Image.asset("assets/images/dash.png",  height: 350,)
+      ],
+    );
+  }
+}
+```
+
+## Scaffold
+
+Un scaffold lo podemos imaginar como un componente, imagina que haces una estructura de una casa de madera, cuando quieras agregar ventanas , habitaciones el scaffold sabe en que posiciones por defecto meterlo
+
+
+```dart
+home: Scaffold(
+        appBar: AppBar(
+          title: Text("My super App"),
+          foregroundColor: Colors.white, // Colores a texto y iconos
+          backgroundColor: Colors.black,
+        ),
+        backgroundColor: Colors.amberAccent,
+        body: const ImageExample(),
+        floatingActionButton: FloatingActionButton(onPressed: (){}),
+      ),
+    );
+ 
+```
+
