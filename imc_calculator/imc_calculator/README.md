@@ -269,3 +269,5 @@ y ahora reemplazamos el codigo en el gender_selector.dart
 ```
 
 y ahora se notara que estamos usando la variable estatica, esto sirve porque si en algun dia hay que cambiar el estilo del texto , no se debera cambiar 1 por 1, solo se ira al archivo del core, en este caso text_styles.dart y modificamos todo mas facil
+
+ahora wrapearemos la Columna dentro de un container para usar box decoration
