@@ -271,3 +271,56 @@ y ahora reemplazamos el codigo en el gender_selector.dart
 y ahora se notara que estamos usando la variable estatica, esto sirve porque si en algun dia hay que cambiar el estilo del texto , no se debera cambiar 1 por 1, solo se ira al archivo del core, en este caso text_styles.dart y modificamos todo mas facil
 
 ahora wrapearemos la Columna dentro de un container para usar box decoration
+
+![gender selector imagen](images_readme/gender_selector.png)
+
+como se podra notar no ocupa todo su ancho entonnces meteremos cada container en un expanded
+
+```dart
+
+ Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              // color: Colors.red,
+          
+            color: selectedGender == "Mujer"
+            ? AppColors.backgroundComponentSelected
+            : AppColors.backgroundComponent,
+              
+              borderRadius: BorderRadius.circular(16)
+              ),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                children: [
+              
+                   Image.asset("assets/images/female.png", height: 100,),
+                  SizedBox(height: 8,),
+                  Text("Mujer".toUpperCase(), 
+                  style: TextStyles.bodyText) //nota que repetimos el mismo Texstyle de mas arriba
+              
+                ],
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+
+  ```
+
+ahora a cada containter, se lo wrapea en un padding (si de nuevo) para darle separacion entre ellos 
+
+```dart
+
+   child: Padding(
+            padding: const EdgeInsets.only(right: 8, bottom: 16, left: 16,top: 16),
+
+```
+por que a la derecha solo 8, facil para darle 8 a la izquierda de mujer y sumen 16 entre los 2
+
+
+---
+
+Ahora esta todo bonito pero el boton no es clickeable, pero por suerte en flutter
+cualquier widget puede der clickeable si lo envolvemos dentro de un tap gesture
