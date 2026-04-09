@@ -22,27 +22,30 @@ class _GenderSelectorState extends State<GenderSelector> {
         
         //Uomo
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16,right: 8, bottom: 16, left: 16),
-            child: Container(
-              decoration: BoxDecoration(
-                // color: Colors.red,
-            
-              color: selectedGender == "Hombre"
-              ? AppColors.backgroundComponentSelected
-              : AppColors.backgroundComponent,
-                
-                borderRadius: BorderRadius.circular(16)
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  children: [
-                    Image.asset("assets/images/male.png", height: 100,),
-                    SizedBox(height: 8,), // Tambien se podia haber usado un padding top
-                    Text("Hombre".toUpperCase(), 
-                    style: TextStyles.bodyText)
-                  ],
+          child: GestureDetector(
+            onTap: (){},
+            child: Padding(
+              padding: const EdgeInsets.only(top: 16,right: 8, bottom: 16, left: 16),
+              child: Container(
+                decoration: BoxDecoration(
+                  // color: Colors.red,
+              
+                color: selectedGender == "Hombre"
+                ? AppColors.backgroundComponentSelected
+                : AppColors.backgroundComponent,
+                  
+                  borderRadius: BorderRadius.circular(16)
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      Image.asset("assets/images/male.png", height: 100,),
+                      SizedBox(height: 8,), // Tambien se podia haber usado un padding top
+                      Text("Hombre".toUpperCase(), 
+                      style: TextStyles.bodyText)
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -51,29 +54,32 @@ class _GenderSelectorState extends State<GenderSelector> {
 
       //Donna
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16, right: 16, bottom: 16, left: 8),
-            child: Container(
-              decoration: BoxDecoration(
-                // color: Colors.red,
-            
-              color: selectedGender == "Mujer"
-              ? AppColors.backgroundComponentSelected
-              : AppColors.backgroundComponent,
-                
-                borderRadius: BorderRadius.circular(16)
-                ),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  children: [
-                
-                     Image.asset("assets/images/female.png", height: 100,),
-                    SizedBox(height: 8,),
-                    Text("Mujer".toUpperCase(), 
-                    style: TextStyles.bodyText) //nota que repetimos el mismo Texstyle de mas arriba
-                
-                  ],
+          child: GestureDetector(
+            onTap: (){},
+            child: Padding(
+              padding: const EdgeInsets.only(top: 16, right: 16, bottom: 16, left: 8),
+              child: Container(
+                decoration: BoxDecoration(
+                  // color: Colors.red,
+              
+                color: selectedGender == "Mujer"
+                ? AppColors.backgroundComponentSelected
+                : AppColors.backgroundComponent,
+                  
+                  borderRadius: BorderRadius.circular(16)
+                  ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                  
+                       Image.asset("assets/images/female.png", height: 100,),
+                      SizedBox(height: 8,),
+                      Text("Mujer".toUpperCase(), 
+                      style: TextStyles.bodyText) //nota que repetimos el mismo Texstyle de mas arriba
+                  
+                    ],
+                  ),
                 ),
               ),
             ),
