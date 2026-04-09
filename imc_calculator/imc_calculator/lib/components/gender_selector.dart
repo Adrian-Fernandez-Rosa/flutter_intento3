@@ -23,7 +23,12 @@ class _GenderSelectorState extends State<GenderSelector> {
         //Uomo
         Expanded(
           child: GestureDetector(
-            onTap: (){},
+            onTap: () {
+
+              setState(() {
+                selectedGender = "Hombre";
+              });
+            },
             child: Padding(
               padding: const EdgeInsets.only(top: 16,right: 8, bottom: 16, left: 16),
               child: Container(
@@ -55,7 +60,13 @@ class _GenderSelectorState extends State<GenderSelector> {
       //Donna
         Expanded(
           child: GestureDetector(
-            onTap: (){},
+            onTap: (){
+              
+              setState(() {
+                selectedGender = "Mujer";
+              });
+              
+            },
             child: Padding(
               padding: const EdgeInsets.only(top: 16, right: 16, bottom: 16, left: 8),
               child: Container(

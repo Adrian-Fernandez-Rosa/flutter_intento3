@@ -324,3 +324,56 @@ por que a la derecha solo 8, facil para darle 8 a la izquierda de mujer y sumen 
 
 Ahora esta todo bonito pero el boton no es clickeable, pero por suerte en flutter
 cualquier widget puede der clickeable si lo envolvemos dentro de un tap gesture
+
+```dart
+// asi quedo el codigo
+String? selectedGender;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        
+        //Uomo
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+
+              setState(() {
+                selectedGender = "Hombre";
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(top: 16,right: 8, bottom: 16, left: 16),
+              child: Container(
+                decoration: BoxDecoration(
+                  // color: Colors.red,
+              
+                color: selectedGender == "Hombre"
+                ? AppColors.backgroundComponentSelected
+                : AppColors.backgroundComponent,
+                  
+                  borderRadius: BorderRadius.circular(16)
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      Image.asset("assets/images/male.png", height: 100,),
+                      SizedBox(height: 8,), // Tambien se podia haber usado un padding top
+                      Text("Hombre".toUpperCase(), 
+                      style: TextStyles.bodyText)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+  ```
+
+  * Notar qque se esta usando String para asignar valor a la variable selectedGender, en un mundo ideal se usan numeros
+
+  ### fin de gender selector?
+
+  
