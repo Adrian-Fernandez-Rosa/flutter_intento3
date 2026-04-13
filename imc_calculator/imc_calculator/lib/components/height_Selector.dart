@@ -23,7 +23,7 @@ class _HeightSelectorState extends State<HeightSelector> {
       padding: const EdgeInsets.only(right: 16, left: 16),
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.backgroundComponent,
+          color: AppColors.backgroundComponent,  //lib/core/appColors
           borderRadius: BorderRadius.circular(16)
         ),
         child: Column(

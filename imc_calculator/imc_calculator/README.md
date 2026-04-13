@@ -376,4 +376,57 @@ String? selectedGender;
 
   ### fin de gender selector?
 
+  ## Height Selector
+
+  ```dart
+
+  class _HeightSelectorState extends State<HeightSelector> {
+
+  // Variable para almacenar cm, el componente que vamos a usar solo acepta tipo de datos double.
+  double height = 220; // Altura inicial
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+
+      padding: const EdgeInsets.only(right: 16, left: 16),
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.backgroundComponent,  //lib/core/appColors
+          borderRadius: BorderRadius.circular(16)
+        ),
+        child: Column(
+          children: [
+            Text("Altura", style: TextStyles.bodyText,),
+            Text("${height.toStringAsFixed(0)}  cm", 
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 38,
+              fontWeight: FontWeight.bold
+            ),),
+            Slider(value: height, onChanged: (nuevaAltura) {
+        
+              setState(() {
+                height = nuevaAltura;
+              });
+            },
+            // Cambiamos minimo y maximos del Slider porque por defecto solo acepta 0 y 1 
+            min: 150,
+            max: 220,
+            divisions: 70, // es la cantidad de puntos que se frenara el slider
+            label: "$height",
+            activeColor: AppColors.primary,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+  
+  ## Peso
+
   
