@@ -28,13 +28,15 @@ class _HeightSelectorState extends State<HeightSelector> {
         ),
         child: Column(
           children: [
-            Text("Altura", style: TextStyles.bodyText,),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text("Altura", style: TextStyles.bodyText,),
+            ),
             Text("${height.toStringAsFixed(0)}  cm", 
             style: TextStyle(
               color: Colors.white,
               fontSize: 38,
-              fontWeight: FontWeight.bold
-            ),),
+              fontWeight: FontWeight.bold)),
             Slider(value: height, onChanged: (nuevaAltura) {
         
               setState(() {

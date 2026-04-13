@@ -22,8 +22,18 @@ class _ImcHomeScreenState extends State<ImcHomeScreen> { //notar qque es privado
       children: [
         GenderSelector(),
         HeightSelector(),
-        NumberSelector(title: "EDAD"),
-       // NumberSelector(title: "EDAD")
+        
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: [
+              Expanded(child: NumberSelector(title: "PESO")),
+              SizedBox(width: 16),
+               Expanded(child: NumberSelector(title: "EDAD"))
+            ],
+          ),
+        ),
+       
       ],
     );
   }

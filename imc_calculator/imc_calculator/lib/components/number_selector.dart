@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:imc_calculator/core/app_colors.dart';
 import 'package:imc_calculator/core/text_styles.dart';
@@ -24,12 +26,18 @@ class _NumberSelectorState extends State<NumberSelector> {
       ), // Notar que el decoration se esta usando mucho, hay que meterlo como componente
 
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
             Text(widget.title, style: TextStyles.bodyText,),
-            Text(""),
+            Text("30",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 38,
+                  fontWeight: FontWeight.bold
+                ),),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FloatingActionButton(
                   onPressed: () {},
