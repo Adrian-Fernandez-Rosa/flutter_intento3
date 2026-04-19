@@ -5,7 +5,12 @@ import 'package:imc_calculator/core/app_colors.dart';
 import 'package:imc_calculator/core/text_styles.dart';
 
 class HeightSelector extends StatefulWidget {
-  const HeightSelector({super.key});
+
+  final double selectedHeight;
+  final Function(double) onHeightChange;
+
+
+  const HeightSelector({super.key, required this.selectedHeight, required this.onHeightChange});
 
   @override
   State<HeightSelector> createState() => _HeightSelectorState();
@@ -14,7 +19,7 @@ class HeightSelector extends StatefulWidget {
 class _HeightSelectorState extends State<HeightSelector> {
 
   // Variable para almacenar cm, el componente que vamos a usar solo acepta tipo de datos double.
-  double height = 220; // Altura inicial
+ // double height = 220; // Altura inicial
 
   @override
   Widget build(BuildContext context) {
@@ -32,22 +37,20 @@ class _HeightSelectorState extends State<HeightSelector> {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text("Altura", style: TextStyles.bodyText,),
             ),
-            Text("${height.toStringAsFixed(0)}  cm", 
+            Text("${widget.selectedHeight.toStringAsFixed(0)}  cm", 
             style: TextStyle(
               color: Colors.white,
               fontSize: 38,
               fontWeight: FontWeight.bold)),
-            Slider(value: height, onChanged: (nuevaAltura) {
+            Slider(value: widget.selectedHeight, onChanged: (nuevaAltura) {
         
-              setState(() {
-                height = nuevaAltura;
-              });
+             widget.onHeightChange(nuevaAltura);
             },
             // Cambiamos minimo y maximos del Slider porque por defecto solo acepta 0 y 1 
             min: 150,
             max: 220,
             divisions: 70, // es la cantidad de puntos que se frenara el slider
-            label: "$height",
+            label: "${widget.selectedHeight.toStringAsFixed(0)} cm",
             activeColor: AppColors.primary,
             )
           ],
