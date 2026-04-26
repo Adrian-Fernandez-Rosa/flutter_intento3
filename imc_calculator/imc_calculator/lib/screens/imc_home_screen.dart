@@ -6,6 +6,7 @@ import 'package:imc_calculator/components/height_Selector.dart';
 import 'package:imc_calculator/components/number_selector.dart';
 import 'package:imc_calculator/core/app_colors.dart';
 import 'package:imc_calculator/core/text_styles.dart';
+import 'package:imc_calculator/screens/imc_result_screen.dart';
 
 class ImcHomeScreen extends StatefulWidget {
   const ImcHomeScreen({super.key});
@@ -75,7 +76,18 @@ Padding(
     height: 60,
     width: double.infinity,
     child: ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+
+        Navigator.push(context, 
+        MaterialPageRoute(builder: (context) => ImcResultScreen(
+          height: selectedHeight,
+          peso: selectedWeight,
+        )
+
+        
+        )
+        );
+      },
       style: ButtonStyle(
         shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
         backgroundColor: WidgetStateProperty.all(AppColors.primary),
